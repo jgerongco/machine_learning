@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifier</title>
+</head>
+<body>
+    <form method="POST">
+        <table style="text-align: left;">
+            <tr>
+                <th><p>Clump Thickness:</p></th>
+                <th><input name="clump_thickness" placeholder="Enter Thickness" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Uniformity Cell Size:</p></th>
+                <th><input name="uniformity_cell_size" placeholder="Enter Cell Size" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Uniformity Cell Shape:</p></th>
+                <th><input name="uniformity_cell_shape" placeholder="Enter Cell Shape" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Marginal Adhesion:</p></th>
+                <th><input name="marginal_adhesion" placeholder="Enter Adhesion" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Single Epithelial Cell Size:</p></th>
+                <th><input name="single_epithelial_cell_size" placeholder="Enter Cell size" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Bland Chromatin:</p></th>
+                <th><input name="bland_chromatin" placeholder="Enter Chromatin" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Normal Nucleoil:</p></th>
+                <th><input name="normal_nucleoil" placeholder="Enter Nucleoil" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Mitoses:</p></th>
+                <th><input name="mitoses" placeholder="Enter Mitoses" type="text"></th>
+            </tr>
+            <tr>
+                <th><p>Classifier:</p></th>
+                <th>
+                    <input class="buttons" type="radio" id="nn" name="classifier" value="Nearest Neighbor">
+                    <label for="nn">Nearest Neighbor</label>
+
+                    <input class="buttons" type="radio" id="nb" name="classifier" value="Naive Bayes">
+                    <label for="nb">Naive Bayes</label>
+
+                    <input class="buttons" type="radio" id="dt" name="classifier" value="Decision Tree">
+                    <label for="dt">Decision Tree</label>
+                </th>
+            </tr>
+
+            <tr>
+                <th><input type="submit" value="Classify"></th>
+            </tr>
+
+            {% if inputs %}
+            <tr>
+                <td colspan='2'>
+                    <h3>Inputs: {{ inputs }}</h3>
+                    <h3>Classifier: {{ classifier }}</h3>
+                    <h3>Prediction: {{ prediction }}</h3>
+                </td>
+            </tr>
+            {% endif %}
+        </table> 
+    </form>
+
+</body>
+</html>
